@@ -4,25 +4,24 @@ import hashlib
 
 def crackMD5():
   encontrado = 0
-  input_hash = input("Ingrese el hash: ")
-  pass_doc = input("Ingrese el nombre del archivo: ")
+  input_hash = input("Ingrese el hash: ") # Pide el hash
+  pass_doc = input("Ingrese la dirección del archivo: ") # Pide el nombre del archivo
 
   try:
-    pass_file = open(pass_doc, "r")
+    pass_file = open(pass_doc, "r") # Abre el archivo
   except:
-    print("No se pudo abrir el archivo")
-    quit()
+    raise("No se pudo abrir el archivo") # Imprime un mensaje de error
 
-  for word in pass_file:
-    enc_wrd = word.encode('utf-8')
-    digest = hashlib.md5(enc_wrd.strip()).hexdigest()
+  for word in pass_file: # Itera las palabras del archivo
+    enc_wrd = word.encode('utf-8') # Codifica la palabra
+    digest = hashlib.md5(enc_wrd.strip()).hexdigest() # Obtiene el hash MD5 de la palabra
 
-    if digest == input_hash:
-      print("La contraseña es: " + word)
-      encontrado = 1
-      break
+    if digest == input_hash: # Si el hash coincide
+      print("La contraseña es: " + word) # Imprime la contraseña
+      encontrado = 1 # Cambia el valor de encontrado
+      break # Sale del ciclo
 
-  if not encontrado:
-    print("Contraseña no encontrada, intente con otro archivo")
+  if not encontrado: # Si no se encontró la contraseña
+    print("Contraseña no encontrada, intente con otro archivo") # Imprime un mensaje
 
-  pass_file.close()
+  pass_file.close() # Cierra el archivo
