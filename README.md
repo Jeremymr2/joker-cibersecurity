@@ -15,8 +15,9 @@ source venv/bin/activate
 ```
 
 Windows
+> En caso de que no funcione, intenta usar antes: Set-ExecutionPolicy RemoteSigned -Scope Process
 ```bash
-Set-ExecutionPolicy RemoteSigned -Scope Process
+.\env\Scripts\activate
 ```
 
 ## Uso
