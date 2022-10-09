@@ -1,8 +1,21 @@
 import hashlib
 
-# Desencripta un hash MD5 y lo compara con las palabras del diccionario
+def crackMD5():  
+  print()
+  print("  ______   ______   _   __  ______   ______   ")
+  print(" |_    _| |  __  | | | / / |  ____| |  __  |  ")
+  print("   |  |   | |  | | | |/ /  | |__    | |__| |  ")
+  print("   |  |   | |  | | |   <   |  __|   |     <   ")
+  print("  _|  |   | |__| | | |\ \  | |____  |  |\  \  ")
+  print(" |____|   |______| |_| \_\ |______| |__| \__\ ")
+  print()
 
-def crackMD5():
+  print("[Info] Herramienta para crackear un hash MD5 y compararlo con las palabras del diccionario")
+  print("  ||   Escrito en Python y utiliza hashlib")
+  print("  ||   Autor: @Jeremymr2")
+  print()
+
+
   encontrado = 0
   input_hash = input("Ingrese el hash: ") # Pide el hash
   pass_doc = input("Ingrese la dirección del archivo: ") # Pide el nombre del archivo

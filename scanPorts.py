@@ -3,6 +3,20 @@ import nmap
 # Obtiene los puertos abiertos de un host
 
 def scanPorts():
+  print()
+  print("  ______   ______   _   __  ______   ______   ")
+  print(" |_    _| |  __  | | | / / |  ____| |  __  |  ")
+  print("   |  |   | |  | | | |/ /  | |__    | |__| |  ")
+  print("   |  |   | |  | | |   <   |  __|   |     <   ")
+  print("  _|  |   | |__| | | |\ \  | |____  |  |\  \  ")
+  print(" |____|   |______| |_| \_\ |______| |__| \__\ ")
+  print()
+
+  print("[Info] Herramienta para escanear los puertos abiertos en una dirección IP")
+  print("  ||   Escrito en Python y utiliza Nmap")
+  print("  ||   Autor: @Jeremymr2")
+  print()
+
   ip=input("[+] IP Objetivo ==> ")
   nm = nmap.PortScanner()
   puertos_abiertos="-p "
@@ -22,5 +36,4 @@ def scanPorts():
         count=1 # Cambia el valor de count
       else: # Si no es el primer puerto
         puertos_abiertos=puertos_abiertos+","+str(port) # Lo agrega a la cadena
-
   print("\nPuertos abiertos: "+ puertos_abiertos +" "+str(ip)) # Imprime los puertos abiertos
