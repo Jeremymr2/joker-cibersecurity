@@ -1,4 +1,4 @@
-import re, subprocess, ctypes, os, sys
+import re, subprocess, ctypes, os, sys, platform
 from os import system
 
 def is_admin():
@@ -9,8 +9,15 @@ def is_admin():
         is_admin = ctypes.windll.shell32.IsUserAnAdmin() != 0
     return is_admin
 
+def getTtl(host):
+    # Se obtiene el TTL del host
+    command = ['ping', '-c', '1', host]
+    proc = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True)
 
-# obtener el sistema operativo del host
+    (out,err) = proc.communicate()
+    print(out)
+    
+
 
 def getSo(): # Hara de funcion main
 
@@ -33,6 +40,8 @@ def getSo(): # Hara de funcion main
     # validar que es una ip valida
     if re.match(r"^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$", ip):
         print("[+] IP valida")
+
+        ttl = getTtl(ip)
     else:
         print("[!] La IP ingresada no es valida")
         print("[!] Ejemplo de IP valida: 192.168.1.1")
