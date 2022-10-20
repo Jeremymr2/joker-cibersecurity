@@ -15,7 +15,13 @@ def getTtl(host):
     proc = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True)
 
     (out,err) = proc.communicate()
-    print(out)
+
+    out = out.split()
+    out = out[12].decode('utf-8')
+ 
+    ttl_value = re.findall(r"\d{1,3}", out)[0]
+ 
+    return ttl_value
     
 
 
@@ -39,9 +45,8 @@ def getSo(): # Hara de funcion main
     ip=input("[+] IP Objetivo ==> ")
     # validar que es una ip valida
     if re.match(r"^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$", ip):
-        print("[+] IP valida")
-
         ttl = getTtl(ip)
+        print("[+] TTL: " + ttl)
     else:
         print("[!] La IP ingresada no es valida")
         print("[!] Ejemplo de IP valida: 192.168.1.1")
