@@ -15,6 +15,7 @@ def main():
   parser.add_argument("-s", "--searchIP", help="Obtiene el hostname y la dirección IP del host", action="store_true")
   parser.add_argument("-p", "--scanPorts", help="Obtiene los puertos abiertos de un host", action="store_true")
   parser.add_argument("-md5", "--crackMD5", help="Desencripta un hash MD5 y lo compara con las palabras del diccionario", action="store_true")
+  parser.add_argument("-gSO", "--getSO", help="Obtiene el sistema operativo del host", action="store_true")
   args = parser.parse_args()
 
   if args.searchIP:
@@ -31,6 +32,12 @@ def main():
     if args.crackMD5:
       import passCracker
       passCracker.crackMD5()
+  
+  if args.getSO:
+    if args.getSO:
+      import getSO
+      getSO.getSo()
+
 
 
 if __name__ == "__main__":
