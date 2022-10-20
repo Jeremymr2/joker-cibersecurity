@@ -17,14 +17,15 @@ def getTtl(host):
     (out,err) = proc.communicate()
 
     out = out.split()
-    out = out[12].decode('utf-8')
- 
+    for i in range(len(out)-5):
+        if out[i].decode('utf-8').find('TTL') == 0:
+            out = out[i].decode('utf-8')
+            break
+        
     ttl_value = re.findall(r"\d{1,3}", out)[0]
  
-    return ttl_value
-    
-
-
+    return ttl_value    
+   
 def getSo(): # Hara de funcion main
 
   print()
@@ -47,6 +48,7 @@ def getSo(): # Hara de funcion main
     if re.match(r"^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$", ip):
         ttl = getTtl(ip)
         print("[+] TTL: " + ttl)
+
     else:
         print("[!] La IP ingresada no es valida")
         print("[!] Ejemplo de IP valida: 192.168.1.1")
