@@ -24,7 +24,18 @@ def getTtl(host):
         
     ttl_value = re.findall(r"\d{1,3}", out)[0]
  
-    return ttl_value    
+    return ttl_value
+    
+def get_os(ttl):
+ 
+    ttl = int(ttl)
+ 
+    if ttl >= 0 and ttl <= 64:
+        return "Linux"
+    elif ttl >= 65 and ttl <= 128:
+        return "Windows"
+    else:
+        return "Not Found"
    
 def getSo(): # Hara de funcion main
 
@@ -48,7 +59,7 @@ def getSo(): # Hara de funcion main
     if re.match(r"^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$", ip):
         ttl = getTtl(ip)
         print("[+] TTL: " + ttl)
-
+        print("[+] Sistema Operativo: " + get_os(ttl))
     else:
         print("[!] La IP ingresada no es valida")
         print("[!] Ejemplo de IP valida: 192.168.1.1")
