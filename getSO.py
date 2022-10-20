@@ -30,7 +30,13 @@ def getSo(): # Hara de funcion main
 
   if is_admin():
     ip=input("[+] IP Objetivo ==> ")
-
+    # validar que es una ip valida
+    if re.match(r"^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$", ip):
+        print("[+] IP valida")
+    else:
+        print("[!] La IP ingresada no es valida")
+        print("[!] Ejemplo de IP valida: 192.168.1.1")
+        sys.exit(1)
   else:
     print("[!] Error: No tienes privilegios de administrador")
     print("[!] Ejecuta el programa como administrador")
