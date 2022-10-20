@@ -1,8 +1,18 @@
-import socket
+import re, subprocess, ctypes, os, sys
+from os import system
+
+def is_admin():
+    is_admin = False
+    try:
+        is_admin = os.getuid() == 0
+    except AttributeError:
+        is_admin = ctypes.windll.shell32.IsUserAnAdmin() != 0
+    return is_admin
+
 
 # obtener el sistema operativo del host
 
-def getSo():
+def getSo(): # Hara de funcion main
 
   print()
   print("  ______   ______   _   __  ______   ______   ")
@@ -18,4 +28,10 @@ def getSo():
   print("  ||   Autor: @Bryan-Herrera-Dev")
   print()
 
-  ip=input("[+] IP Objetivo ==> ")
+  if is_admin():
+    ip=input("[+] IP Objetivo ==> ")
+
+  else:
+    print("[!] Error: No tienes privilegios de administrador")
+    print("[!] Ejecuta el programa como administrador")
+    sys.exit(1)
