@@ -1,4 +1,3 @@
-import nmap
 from _utils.bannerEmmiter import bannerEmmiter
 
 # Obtiene los puertos abiertos de un host
@@ -7,6 +6,7 @@ def scanPorts():
   bannerEmmiter(['@Jeremymr2'], 'Herramienta para escanear los puertos abiertos en una dirección IP', 'Escrito en Python y utiliza Nmap')
 
 
+  import nmap
   ip=input("[+] IP Objetivo ==> ")
   nm = nmap.PortScanner()
   puertos_abiertos="-p "

@@ -1,10 +1,10 @@
-import hashlib
 from _utils.bannerEmmiter import bannerEmmiter
 
 def crackMD5():  
   bannerEmmiter(['@Jeremymr2'], 'Herramienta para crackear un hash MD5 y compararlo con las palabras del diccionario', 'Escrito en Python y utiliza hashlib')
   
 
+  import hashlib
   encontrado = 0
   input_hash = input("Ingrese el hash: ") # Pide el hash
   pass_doc = input("Ingrese la dirección del archivo: ") # Pide el nombre del archivo
