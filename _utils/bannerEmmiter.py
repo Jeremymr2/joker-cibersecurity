@@ -15,4 +15,4 @@ def bannerEmmiter(authors, info, aditional_nfo):
         for author in authors:
             print("  ||   %s" % author)
     else:
-        print("  || Autor: %s" % author)
+        print("  || Autor: %s" % authors[0])
