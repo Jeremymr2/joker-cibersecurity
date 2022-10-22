@@ -1,4 +1,8 @@
-import argparse
+import argparse, signal
+from _utils  import handlerCtrsC
+
+# Función para capturar la señal SIGINT (Ctrl+C)
+signal.signal(signal.SIGINT, handlerCtrsC)
 
 def main():
   parser = argparse.ArgumentParser(description="""
