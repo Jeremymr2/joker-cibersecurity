@@ -1,5 +1,4 @@
 import re, subprocess, ctypes, os, sys, platform
-from os import system
 from _utils.bannerEmmiter import bannerEmmiter
 def is_admin():
     is_admin = False

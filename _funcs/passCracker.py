@@ -1,20 +1,9 @@
 import hashlib
+from _utils.bannerEmmiter import bannerEmmiter
 
 def crackMD5():  
-  print()
-  print("  ______   ______   _   __  ______   ______   ")
-  print(" |_    _| |  __  | | | / / |  ____| |  __  |  ")
-  print("   |  |   | |  | | | |/ /  | |__    | |__| |  ")
-  print("   |  |   | |  | | |   <   |  __|   |     <   ")
-  print("  _|  |   | |__| | | |\ \  | |____  |  |\  \  ")
-  print(" |____|   |______| |_| \_\ |______| |__| \__\ ")
-  print()
-
-  print("[Info] Herramienta para crackear un hash MD5 y compararlo con las palabras del diccionario")
-  print("  ||   Escrito en Python y utiliza hashlib")
-  print("  ||   Autor: @Jeremymr2")
-  print()
-
+  bannerEmmiter(['@Jeremymr2'], 'Herramienta para crackear un hash MD5 y compararlo con las palabras del diccionario', 'Escrito en Python y utiliza hashlib')
+  
 
   encontrado = 0
   input_hash = input("Ingrese el hash: ") # Pide el hash

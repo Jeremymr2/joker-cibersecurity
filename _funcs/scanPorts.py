@@ -1,21 +1,11 @@
 import nmap
+from _utils.bannerEmmiter import bannerEmmiter
 
 # Obtiene los puertos abiertos de un host
 
 def scanPorts():
-  print()
-  print("  ______   ______   _   __  ______   ______   ")
-  print(" |_    _| |  __  | | | / / |  ____| |  __  |  ")
-  print("   |  |   | |  | | | |/ /  | |__    | |__| |  ")
-  print("   |  |   | |  | | |   <   |  __|   |     <   ")
-  print("  _|  |   | |__| | | |\ \  | |____  |  |\  \  ")
-  print(" |____|   |______| |_| \_\ |______| |__| \__\ ")
-  print()
+  bannerEmmiter(['@Jeremymr2'], 'Herramienta para escanear los puertos abiertos en una dirección IP', 'Escrito en Python y utiliza Nmap')
 
-  print("[Info] Herramienta para escanear los puertos abiertos en una dirección IP")
-  print("  ||   Escrito en Python y utiliza Nmap")
-  print("  ||   Autor: @Jeremymr2")
-  print()
 
   ip=input("[+] IP Objetivo ==> ")
   nm = nmap.PortScanner()
