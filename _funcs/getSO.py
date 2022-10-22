@@ -1,6 +1,6 @@
 import re, subprocess, ctypes, os, sys, platform
 from os import system
-
+from _utils.bannerEmmiter import bannerEmmiter
 def is_admin():
     is_admin = False
     try:
@@ -39,20 +39,7 @@ def get_os(ttl):
    
 def getSo(): # Hara de funcion main
 
-  print()
-  print("  ______   ______   _   __  ______   ______   ")
-  print(" |_    _| |  __  | | | / / |  ____| |  __  |  ")
-  print("   |  |   | |  | | | |/ /  | |__    | |__| |  ")
-  print("   |  |   | |  | | |   <   |  __|   |     <   ")
-  print("  _|  |   | |__| | | |\ \  | |____  |  |\  \  ")
-  print(" |____|   |______| |_| \_\ |______| |__| \__\ ")
-  print()
-
-  print("[Info] Herramienta para obtener el sistema operativo del host con el menor ruido posible")
-  print("  ||   Escrito en Python y utiliza sockets")
-  print("  ||   Autor: @Bryan-Herrera-Dev")
-  print()
-
+  bannerEmmiter(['@Bryan-Herrera-Dev'], 'Herramienta para obtener el sistema operativo del host con el menor ruido posible', 'Escrito en python utilizando el sistema de mediciones TTL')
   if is_admin():
     ip=input("[+] IP Objetivo ==> ")
     # validar que es una ip valida
