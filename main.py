@@ -20,7 +20,7 @@ def main():
 
   if args.searchIP:
     if args.searchIP:
-      import searchIP
+      from _funcs import searchIP
       searchIP.searchIP()
 
   if args.scanPorts:
@@ -30,12 +30,12 @@ def main():
 
   if args.crackMD5:
     if args.crackMD5:
-      import passCracker
+      from _funcs import passCracker
       passCracker.crackMD5()
   
   if args.getSO:
     if args.getSO:
-      import getSO
+      from _funcs import getSO
       getSO.getSo()
 
 
