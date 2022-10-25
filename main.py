@@ -1,6 +1,11 @@
-import argparse
+import argparse, signal
+from _utils import handlerCtrsC
+
+# Función para capturar la señal SIGINT (Ctrl+C)
+signal.signal(signal.SIGINT, handlerCtrsC.def_handler)
 
 def main():
+
   parser = argparse.ArgumentParser(description="""
     ______   ______   _   __  ______   ______   
    |_    _| |  __  | | | / / |  ____| |  __  |  
@@ -20,22 +25,22 @@ def main():
 
   if args.searchIP:
     if args.searchIP:
-      import searchIP
+      from _funcs import searchIP
       searchIP.searchIP()
 
   if args.scanPorts:
     if args.scanPorts:
-      import scanPorts
+      from _funcs import scanPorts
       scanPorts.scanPorts()
 
   if args.crackMD5:
     if args.crackMD5:
-      import passCracker
+      from _funcs import passCracker
       passCracker.crackMD5()
   
   if args.getSO:
     if args.getSO:
-      import getSO
+      from _funcs import getSO
       getSO.getSo()
 
 
